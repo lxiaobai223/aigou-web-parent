@@ -10,9 +10,15 @@ import Vuex from 'vuex'
 //import NProgress from 'nprogress'
 //import 'nprogress/nprogress.css'
 import routes from './routes'
-import Mock from './mock'
-Mock.bootstrap();
+/*import Mock from './mock'
+Mock.bootstrap();*/
 import 'font-awesome/css/font-awesome.min.css'
+
+import axios from 'axios'
+axios.defaults.baseURL = ' https://www.easy-mock.com/mock/5d3ee7a7098aae23338e7adf/plat'  //对应后端网关统一地址
+// 将API方法绑定到全局  /plat/login
+Vue.prototype.$http = axios
+Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
